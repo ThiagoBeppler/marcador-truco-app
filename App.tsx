@@ -13,6 +13,9 @@ export default function App() {
       <Pressable onPress={() => setScore(score + 1)}>
         <Text>Incrementar</Text>
       </Pressable>
+      <Pressable onPress={() => setScore(score - 1)}>
+        <Text>Decrementar</Text>
+      </Pressable>
       <Pressable onPress={() => setScore(0)}>
         <Text>Zerar</Text>
       </Pressable>
