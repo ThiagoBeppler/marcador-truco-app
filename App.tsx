@@ -1,26 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
-
+import { StyleSheet, Text, View } from 'react-native';
+import { Botao } from './components/Botao';
+import Contador from './components/Contador';
 
 export default function App() {
-  const [score, setScore] = useState(0);
 
   return (
     <View style={styles.container}>
-      <Text>Marcador de Truco</Text>
-      <Text>{score}</Text>
-      <Pressable onPress={() => setScore(score + 1)}>
-        <Text>Incrementar</Text>
-      </Pressable>
-      <Pressable onPress={() => setScore(score - 1)}>
-        <Text>Decrementar</Text>
-      </Pressable>
-      <Pressable onPress={() => setScore(0)}>
-        <Text>Zerar</Text>
-      </Pressable>
-      <StatusBar style="auto" />
+      <Text style={styles.titulo}>Marcador de Truco</Text>
+
+      <Contador />
     </View>
+
   );
 }
 
@@ -31,4 +23,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  titulo: {
+    marginTop: 200,
+    fontSize: 40,
+    fontWeight: 'bold',
+   alignItems: 'center'
+  }
 });
